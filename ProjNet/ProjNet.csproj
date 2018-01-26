@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{62E8AD2D-CA80-4FE9-B590-7EF41DC19D70}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProjNet</RootNamespace>
+    <AssemblyName>ProjNet</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GeoAPI, Version=1.7.4.0, Culture=neutral, PublicKeyToken=a1a0da7def465678, processorArchitecture=MSIL">
+      <HintPath>..\packages\GeoAPI.1.7.4\lib\net45\GeoAPI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CoordinateSystems\AngularUnit.cs" />
+    <Compile Include="CoordinateSystems\CoordinateSystem.cs" />
+    <Compile Include="CoordinateSystems\CoordinateSystemFactory.cs" />
+    <Compile Include="CoordinateSystems\Datum.cs" />
+    <Compile Include="CoordinateSystems\Ellipsoid.cs" />
+    <Compile Include="CoordinateSystems\FittedCoordinateSystem.cs" />
+    <Compile Include="CoordinateSystems\GeocentricCoordinateSystem.cs" />
+    <Compile Include="CoordinateSystems\GeographicCoordinateSystem.cs" />
+    <Compile Include="CoordinateSystems\GeographicTransform.cs" />
+    <Compile Include="CoordinateSystems\HorizontalCoordinateSystem.cs" />
+    <Compile Include="CoordinateSystems\HorizontalDatum.cs" />
+    <Compile Include="CoordinateSystems\Info.cs" />
+    <Compile Include="CoordinateSystems\LinearUnit.cs" />
+    <Compile Include="CoordinateSystems\ParameterInfo.cs" />
+    <Compile Include="CoordinateSystems\PrimeMeridian.cs" />
+    <Compile Include="CoordinateSystems\ProjectedCoordinateSystem.cs" />
+    <Compile Include="CoordinateSystems\Projection.cs" />
+    <Compile Include="CoordinateSystems\Projections\AlbersProjection.cs" />
+    <Compile Include="CoordinateSystems\Projections\CassiniSoldnerProjection.cs" />
+    <Compile Include="CoordinateSystems\Projections\HotineObliqueMercatorProjection.cs" />
+    <Compile Include="CoordinateSystems\Projections\KrovakProjection.cs" />
+    <Compile Include="CoordinateSystems\Projections\LambertConformalConic.cs" />
+    <Compile Include="CoordinateSystems\Projections\MapProjection.cs" />
+    <Compile Include="CoordinateSystems\Projections\Mercator.cs" />
+    <Compile Include="CoordinateSystems\Projections\ObliqueStereographicProjection.cs" />
+    <Compile Include="CoordinateSystems\Projections\PolyconicProjection.cs" />
+    <Compile Include="CoordinateSystems\Projections\ProjectionParameterSet.cs" />
+    <Compile Include="CoordinateSystems\Projections\ProjectionsRegistry.cs" />
+    <Compile Include="CoordinateSystems\Projections\TransverseMercator.cs" />
+    <Compile Include="CoordinateSystems\Transformations\AffineTransform.cs" />
+    <Compile Include="CoordinateSystems\Transformations\ConcatenatedTransform.cs" />
+    <Compile Include="CoordinateSystems\Transformations\CoordinateTransformation.cs" />
+    <Compile Include="CoordinateSystems\Transformations\CoordinateTransformationFactory.cs" />
+    <Compile Include="CoordinateSystems\Transformations\DatumTransform.cs" />
+    <Compile Include="CoordinateSystems\Transformations\GeocentricTransform.cs" />
+    <Compile Include="CoordinateSystems\Transformations\GeographicTransform.cs" />
+    <Compile Include="CoordinateSystems\Transformations\MathTransform.cs" />
+    <Compile Include="CoordinateSystems\Transformations\PrimeMeridianTransform.cs" />
+    <Compile Include="CoordinateSystems\Unit.cs" />
+    <Compile Include="GCJ02.cs" />
+    <Compile Include="IO\CoordinateSystems\CoordinateSystemWktReader.cs" />
+    <Compile Include="IO\CoordinateSystems\MathTransformWktReader.cs" />
+    <Compile Include="IO\CoordinateSystems\StreamTokenizer.cs" />
+    <Compile Include="IO\CoordinateSystems\TokenType.cs" />
+    <Compile Include="IO\CoordinateSystems\WKTStreamTokenizer.cs" />
+    <Compile Include="ProjNetCoordinateSystemServices.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
